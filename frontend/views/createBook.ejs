@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<main>
+  <h1>Create a New Book</h1>
+
+  <form action="/api/books" method="POST">
+    <label for="text">Title:</label>
+    <input type="text" id="text" name="text" placeholder="Book title" required />
+    <button type="submit">Create Book</button>
+  </form>
+</main>
+
+<%- include('partials/footer') %>

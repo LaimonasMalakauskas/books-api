@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<main>
+  <h2><%= book.text %></h2>
+  <p><strong>Book ID:</strong> <%= book._id %></p>
+  <p><strong>Created At:</strong> <%= new Date(book.createdAt).toLocaleString() %></p>
+  <p><strong>Updated At:</strong> <%= new Date(book.updatedAt).toLocaleString() %></p>
+
+  <!-- Update Form -->
+  <form action="/api/books/<%= book._id %>?_method=PUT" method="POST">
+    <label for="text">Update Book:</label>
+    <input type="text" id="text" name="text" placeholder="New Book Text" required>
+    <button type="submit">Update</button>
+  </form>
+
+  <!-- Delete Form -->
+  <form action="/api/books/<%= book._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+  </form>
+</main>
+
+<%- include('partials/footer') %>

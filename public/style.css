@@ -1,0 +1,140 @@
+/* Bendras stilius */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Kūno (body) stilius, kad jis užimtų visą ekraną */
+html, body {
+  height: 100%; /* Užtikrina, kad užimtų 100% naršyklės lango aukščio */
+}
+
+body {
+  min-height: 100vh; /* Mažiausias aukštis – 100% naršyklės aukščio */
+  display: flex; /* Naudojame flexbox išdėstymą */
+  flex-direction: column; /* Vaikai išdėstomi stulpeliu */
+  background-color: #f4f4f9; /* Fono spalva */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header stilius */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  flex-shrink: 0; /* Header dydis nesikeičia, kai langas mažėja */
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+/* Navigacija */
+nav {
+  background-color: #444;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  color: #5a67d8;
+}
+
+/* Pagrindinis turinys */
+main {
+  flex: 1; /* Užpildo likusį ekraną tarp header ir footer */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+main p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Footer stilius */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  flex-shrink: 0;
+}
+
+main ul {
+  list-style: none;
+  padding: 0;
+}
+
+main ul li {
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main ul li form {
+  display: inline;
+}
+
+main button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+main button:hover {
+  background-color: #0056b3;
+}
+
+main button[type="submit"] {
+  background-color: #dc3545;
+}
+
+main button[type="submit"]:hover {
+  background-color: #b02a37;
+}
+
+#updateForm {
+  margin-top: 20px;
+}
+
