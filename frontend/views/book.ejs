@@ -1,23 +1,36 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
 
-<main>
-  <h2><%= book.text %></h2>
-  <p><strong>Book ID:</strong> <%= book._id %></p>
-  <p><strong>Created At:</strong> <%= new Date(book.createdAt).toLocaleString() %></p>
-  <p><strong>Updated At:</strong> <%= new Date(book.updatedAt).toLocaleString() %></p>
-
-  <!-- Update Form -->
-  <form action="/api/books/<%= book._id %>?_method=PUT" method="POST">
-    <label for="text">Update Book:</label>
-    <input type="text" id="text" name="text" placeholder="New Book Text" required>
-    <button type="submit">Update</button>
-  </form>
-
-  <!-- Delete Form -->
-  <form action="/api/books/<%= book._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-  </form>
+<main >
+  <div class="update">
+    <div class="update-book">
+      <h3><%= book.name%></h3>
+      <h3><%=book.author%></h3>
+      <p><%=book.title%></p>
+      <small><p><%=book.price%>€</p></small>
+      <p><small>Created - <%= new Date(book.createdAt).toLocaleString() %></small></p>
+      <p><small>Updated - <%= new Date(book.updatedAt).toLocaleString() %></small></p>
+    </div>
+    <!-- Update Form -->
+    <div class="update-book-form">
+    <form class="update" action="/api/books/<%= book._id %>?_method=PUT" method="POST">
+      <label for="name">Update Name</label>
+      <input type="text" id="name" name="name" value="<%= book.name%>" required>
+      <label for="author">Update Author</label>
+      <input type="text" id="author" name="author" value="<%= book.author%>" required>
+      <label for="title">Update Title</label>
+      <input type="text" id="title" name="title" value="<%= book.title%>" required>
+      <label for="price">Update Price</label>
+      <input type="number" id="price" name="price" value="<%= book.price%>" required>
+      <button type="submit">Update</button>
+    </form>
+    <br>
+    <!-- Delete Form -->
+    <form class="delete" action="/api/books/<%= book._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+  </div>
 </main>
 
 <%- include('partials/footer') %>

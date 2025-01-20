@@ -21,13 +21,17 @@ const getBookById = asyncHandler(async (req, res) => {
 })
 
 const setBook = asyncHandler(async (req, res) => {
-  if(!req.body.text) {
+  const { name, author, title, price } = req.body
+  if(!name || !author || !title || !price) {
     res.status(400)
     throw new Error('Please add a text field')
   }
 
   const book = await Book.create({
-    text: req.body.text
+    name,
+    author,
+    title,
+    price
   })
   //res.status(200).json(book)
   res.status(201).redirect('/api/books')

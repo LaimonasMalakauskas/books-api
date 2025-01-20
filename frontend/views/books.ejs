@@ -3,13 +3,17 @@
 
 <main>
   <h1>Book List</h1>
-  <ul>
-    <% books.forEach((book) => { %>
-      <li>
-        <a href="/api/books/<%= book._id %>"><%= book.text %></a>
-      </li>
-    <% }) %>
-  </ul>
+    <div class="books">
+      <% books.forEach((book) => { %>
+          <a class="single" href="/api/books/<%= book._id %>">
+          <h3><%= book.name%></h3>
+          <h3><%=book.author%></h3>
+          <p><%=book.title%></p>
+          <small><p><%=book.price%>€</p></small>
+        </a>
+      <% }) %>
+    </div>
 </main>
+
 
 <%- include('partials/footer') %>

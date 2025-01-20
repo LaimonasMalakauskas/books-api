@@ -1,32 +1,34 @@
-/* Bendras stilius */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Kūno (body) stilius, kad jis užimtų visą ekraną */
+
 html, body {
-  height: 100%; /* Užtikrina, kad užimtų 100% naršyklės lango aukščio */
+  height: 100%;
 }
 
 body {
-  min-height: 100vh; /* Mažiausias aukštis – 100% naršyklės aukščio */
-  display: flex; /* Naudojame flexbox išdėstymą */
-  flex-direction: column; /* Vaikai išdėstomi stulpeliu */
-  background-color: #f4f4f9; /* Fono spalva */
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  background-color: #f4f4f9; 
   color: #333;
   line-height: 1.6;
 }
 
-/* Header stilius */
+
 header {
   background-color: #333;
   color: white;
   padding: 20px 0;
   text-align: center;
-  flex-shrink: 0; /* Header dydis nesikeičia, kai langas mažėja */
+  flex-shrink: 0; 
 }
 
 header h1 {
@@ -38,21 +40,25 @@ header p {
   font-size: 1.2em;
 }
 
-/* Navigacija */
+
 nav {
   background-color: #444;
   text-align: center;
   flex-shrink: 0;
+  height: 5rem;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 nav ul li {
-  display: inline;
-  margin-right: 20px;
+ padding: 20px;
 }
 
 nav ul li a {
@@ -65,9 +71,9 @@ nav ul li a:hover {
   color: #5a67d8;
 }
 
-/* Pagrindinis turinys */
+
 main {
-  flex: 1; /* Užpildo likusį ekraną tarp header ir footer */
+  flex: 1; 
   padding: 20px;
   background-color: #ffffff;
   border-radius: 8px;
@@ -84,7 +90,7 @@ main p {
   margin-bottom: 20px;
 }
 
-/* Footer stilius */
+
 footer {
   text-align: center;
   padding: 10px;
@@ -113,28 +119,209 @@ main ul li form {
   display: inline;
 }
 
-main button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-main button:hover {
-  background-color: #0056b3;
-}
-
-main button[type="submit"] {
-  background-color: #dc3545;
-}
-
-main button[type="submit"]:hover {
-  background-color: #b02a37;
-}
-
 #updateForm {
   margin-top: 20px;
 }
+
+.single {
+  display: block;
+  width: 300px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.single:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.single h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.single p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.single p:last-child {
+  margin-bottom: 0;
+}
+
+.books {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.update-book, .update-book-form {
+  width: 400px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-book h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0;
+}
+
+.update-book p, .update-book small {
+  color: #555;
+  margin: 5px 0;
+}
+
+.update-book-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.update-book-form input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.update button {
+  padding: 10px 15px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 360px;
+}
+
+.update button:hover {
+  background-color: rgb(221, 145, 5);
+}
+
+.delete button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 360px;
+}
+
+.delete button:hover {
+  background-color: #e53935;
+}
+
+@media (max-width: 600px) {
+  .update-book, .update-book-form {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .update-book h3 {
+    font-size: 1.2em;
+  }
+
+  .update-book p, .update-book small {
+    font-size: 0.9em;
+  }
+
+  .update-book-form input {
+    font-size: 1em;
+  }
+
+  .update-book-form button, form button {
+    font-size: 1em;
+    width: 100%;
+  }
+}
+
+ .update {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.create-book-form {
+  max-width: 500px;
+  margin: 0 auto; 
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-book-form h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.create-book-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+.create-book-form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.create-book-form input:focus {
+  outline: none;
+  border-color: #5c9ded;
+}
+
+.create-book-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #5c9ded;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-book-form button:hover {
+  background-color: #4a8ac7;
+}
+
+.create-book-form button:focus {
+  outline: none;
+}
+
 
