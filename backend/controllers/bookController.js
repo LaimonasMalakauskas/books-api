@@ -2,10 +2,6 @@ const asyncHandler = require('express-async-handler')
 
 const Book = require('../models/bookModel')
 
-const renderHomePage = asyncHandler(async (req, res) => {
-  res.render('index');
-})
-
 const getBooks = asyncHandler(async (req, res) => {
   const books = await Book.find()
 
@@ -24,7 +20,7 @@ const getBookById = asyncHandler(async (req, res) => {
 })
 
 const renderCreateBookPage = asyncHandler(async (req, res) => {
-  res.render('createBook')
+  res.render('createBook');
 })
 
 const setBook = asyncHandler(async (req, res) => {
@@ -71,10 +67,9 @@ const deleteBook = asyncHandler(async (req, res) => {
 })
 
 module.exports = {
-  renderHomePage,
+  renderCreateBookPage,
   getBooks,
   getBookById,
-  renderCreateBookPage,
   setBook,
   updateBook,
   deleteBook,
