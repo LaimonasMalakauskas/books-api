@@ -75,8 +75,7 @@ nav ul li a:hover {
 main {
   flex: 1; 
   padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
+  background: linear-gradient(to bottom right, #e0e0e0, #4a4a4a);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -184,7 +183,6 @@ main ul li form {
 }
 
 .update-book p, .update-book small {
-  color: #555;
   margin: 5px 0;
 }
 
@@ -329,4 +327,22 @@ main ul li form {
   outline: none;
 }
 
+small>p {
+  display: inline-block; 
+  padding: 5px 20px; 
+  border-radius: 50px; 
+  background-color: #e0e0e0; 
+  color: #5a67d8; 
+  font-size: 16px; 
+  font-weight: bold; 
+  text-align: center;
+  border-bottom: 2px solid #4d4b4b75; 
+}
+hr {
+  border: none; 
+  height: 2px;  
+  background-color: #555; 
+  margin: 10px 0;
+  width: 100%;
+}
 

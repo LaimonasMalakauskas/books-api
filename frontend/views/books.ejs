@@ -9,7 +9,7 @@
           <h3><%= book.name%></h3>
           <h3><%=book.author%></h3>
           <p><%=book.title%></p>
-          <small><p><%=book.price%>€</p></small>
+          <small><p><%=book.price.toFixed(2)%>€</p></small>
         </a>
       <% }) %>
     </div>

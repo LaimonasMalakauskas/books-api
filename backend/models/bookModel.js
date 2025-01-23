@@ -16,7 +16,8 @@ const bookSchema = mongoose.Schema({
   }, 
   price: {
     type: Number, 
-    required: [true, 'Please add price']
+    required: [true, 'Please add price'], 
+    set: v => parseFloat(v).toFixed(2)
   }
 },
   {
