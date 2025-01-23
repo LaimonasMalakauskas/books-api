@@ -19,7 +19,7 @@
       <label for="author">Update Author</label>
       <input type="text" id="author" name="author" value="<%= book.author%>" required>
       <label for="title">Update Title</label>
-      <input type="text" id="title" name="title" value="<%= book.title%>" required>
+      <textarea type="text" id="title" name="title" required><%= book.title%></textarea>
       <label for="price">Update Price</label>
       <input type="number" id="price" name="price" value="<%= book.price%>" required>
       <button type="submit">Update</button>
